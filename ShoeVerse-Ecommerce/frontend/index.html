@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeVerse | Walk Beyond Fashion</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <script>
+    if (!localStorage.getItem("token")) {
+        window.location.href = "login.html";
+    }
+    </script>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            <h2>ShoeVerse</h2>
+        </div>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="products.html">Products</a></li>
+
+            <li><a href="#categories">Categories</a></li>
+
+            <li id="loginNav">
+                <a href="login.html">Login</a>
+            </li>
+
+            <li id="registerNav">
+                <a href="register.html">Register</a>
+            </li>
+
+            <li id="logoutNav" style="display:none;">
+                <a href="#" onclick="logout()">Logout</a>
+            </li>
+
+            <li>
+                <a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Walk Beyond <br>
+                <span>Fashion</span>
+            </h1>
+
+            <p>
+
+                Discover premium footwear crafted for every journey.
+                Elevate your style with comfort, quality and confidence.
+
+            </p>
+
+            <a href="products.html" class="btn">
+                Shop Collection
+            </a>
+            <a href="#categories" class="btn2">Explore</a>
+        </div>
+
+        <div class="hero-image">
+
+            <img src="images/hero-shoe.jpg" alt="Hero Shoe">
+
+        </div>
+
+    </section>
+
+    <!-- ================= FEATURED COLLECTION ================= -->
+
+    <section class="featured">
+
+        <h2>Featured Collection</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+
+                <img src="images/running1.jpg" alt="Sneaker">
+
+                <h3>Urban Runner</h3>
+
+                <p class="price">₹3,999</p>
+
+                <p class="rating">★★★★★</p>
+
+                <button>View Details</button>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="images/sneaker-2.jpg" alt="Sneaker">
+
+                <h3>Air Max Elite</h3>
+
+                <p class="price">₹5,999</p>
+
+                <p class="rating">★★★★★</p>
+
+                <button>View Details</button>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="images/formal1.jpg" alt="Sneaker">
+
+                <h3>Classic Formal</h3>
+
+                <p class="price">₹3,499</p>
+
+                <p class="rating">★★★★☆</p>
+
+                <button>View Details</button>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="images/boots1.jpg" alt="Sneaker">
+
+                <h3>Mountain Boots</h3>
+
+                <p class="price">₹6,499</p>
+
+                <p class="rating">★★★★★</p>
+
+                <button>View Details</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="categories" id="categories">
+
+        <h2>Shop by Category</h2>
+
+        <div class="category-grid">
+
+            <div class="category-item">
+                <img src="images/sneaker-1.jpg" alt="Sneakers">
+                <h3>Sneakers</h3>
+            </div>
+
+            <div class="category-item">
+                <img src="images/sports1.jpg" alt="Sports Shoes">
+                <h3>Sports Shoes</h3>
+            </div>
+
+            <div class="category-item">
+                <img src="images/formal2.jpg" alt="Formal Shoes">
+                <h3>Formal Shoes</h3>
+            </div>
+
+            <div class="category-item">
+                <img src="images/boots2.jpg" alt="Boots">
+                <h3>Boots</h3>
+            </div>
+            <div class="category-item">
+                <img src="images/party1.jpg" alt="Party Wear">
+                <h3>Party Wear</h3>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ================= WHY US ================= -->
+
+    <section class="features">
+
+        <h2>Why Choose ShoeVerse?</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="icon">🚚</div>
+                <h3>Free Shipping</h3>
+                <p>Free delivery on all orders above ₹999.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🛡️</div>
+                <h3>Secure Payment</h3>
+                <p>100% secure and trusted payment gateway.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">⭐</div>
+                <h3>Premium Quality</h3>
+                <p>Only genuine premium footwear brands.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">↩️</div>
+                <h3>Easy Returns</h3>
+                <p>7-Day hassle-free return policy.</p>
+            </div>
+
+        </div>
+
+    </section>
+    
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h2>ShoeVerse</h2>
+
+        <p>Walk Beyond Fashion.</p>
+
+        <p>© 2026 ShoeVerse. All Rights Reserved.</p>
+
+    </footer>
+
+<script src="js/script.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+
+</html>
+
