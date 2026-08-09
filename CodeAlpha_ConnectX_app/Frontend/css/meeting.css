@@ -1,0 +1,929 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#18191c;
+    color:#fff;
+    overflow:hidden;
+}
+
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.meeting-navbar{
+    height:72px;
+    background:#202124;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 32px;
+
+    border-bottom:1px solid #34363a;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:700;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#4F8DFD;
+}
+
+.logo i{
+    font-size:23px;
+}
+
+.meeting-info{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+#roomDisplay{
+    background:#2d2f33;
+    padding:9px 15px;
+    border-radius:9px;
+
+    font-size:14px;
+    color:#e8eaed;
+}
+
+#userCountDisplay{
+    background:#2d2f33;
+    padding:9px 13px;
+    border-radius:9px;
+
+    font-size:14px;
+    color:#e8eaed;
+}
+
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.meeting-container{
+    display:flex;
+    gap:18px;
+    padding:18px;
+    height:calc(100vh - 162px);
+    background:#18191c;
+}
+
+/* ===========================
+   VIDEO SECTION
+=========================== */
+
+.video-section{
+    flex:1;
+
+    display:flex;
+
+    gap:18px;
+
+    padding:18px;
+
+    align-items:stretch;
+}
+
+.video-box{
+    flex:1;
+    position:relative;
+
+    background:#252629;
+    border:1px solid #34363a;
+    border-radius:18px;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:420px;
+}
+
+.video-box video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.video-title{
+    position:absolute;
+    left:14px;
+    bottom:14px;
+
+    z-index:2;
+
+    background:rgba(20,20,20,.72);
+
+    padding:7px 12px;
+
+    border-radius:8px;
+
+    font-size:13px;
+    font-weight:500;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    backdrop-filter:blur(5px);
+}
+
+video{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+/* ===========================
+   CHAT
+=========================== */
+
+.chat-section{
+    flex:1;
+    min-width:285px;
+    max-width:340px;
+
+    margin:22px 22px 22px 0;
+
+    background:#252629;
+
+    border:1px solid #34363a;
+    border-radius:16px;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.chat-section h2{
+    padding:17px 18px;
+
+    font-size:16px;
+    font-weight:600;
+
+    border-bottom:1px solid #34363a;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.chat-section h2 i{
+    color:#4F8DFD;
+}
+
+#messages{
+    flex:1;
+
+    padding:18px;
+
+    overflow-y:auto;
+
+    color:#d8dadd;
+
+    font-size:14px;
+    line-height:1.7;
+}
+
+#messages p{
+    background:#303236;
+
+    padding:9px 11px;
+
+    border-radius:10px;
+
+    margin-bottom:10px;
+
+    word-break:break-word;
+}
+
+#messages strong{
+    color:#72a3ff;
+}
+
+
+/* ===========================
+   CHAT INPUT
+=========================== */
+
+.chat-input{
+    display:flex;
+
+    padding:12px;
+
+    gap:8px;
+
+    border-top:1px solid #34363a;
+}
+
+.chat-input input{
+    flex:1;
+    min-width:0;
+
+    padding:11px 13px;
+
+    background:#303236;
+    color:white;
+
+    border:1px solid transparent;
+    border-radius:10px;
+
+    outline:none;
+}
+
+.chat-input input::placeholder{
+    color:#9ca0a8;
+}
+
+.chat-input input:focus{
+    border-color:#4F8DFD;
+}
+
+.chat-input button{
+    width:44px;
+    height:44px;
+
+    flex-shrink:0;
+
+    border:none;
+    border-radius:10px;
+
+    background:#2563EB;
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.2s;
+}
+
+.chat-input button:hover{
+    background:#1d4ed8;
+    transform:translateY(-1px);
+}
+
+
+/* ===========================
+   BOTTOM CONTROLS
+=========================== */
+
+.controls{
+    height:90px;
+
+    background:#202124;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:14px;
+
+    padding:10px 20px;
+
+    border-top:1px solid #34363a;
+}
+
+.controls button{
+    min-width:74px;
+    height:66px;
+
+    padding:8px 10px;
+
+    border:none;
+    border-radius:14px;
+
+    background:transparent;
+    color:#dfe1e5;
+
+    cursor:pointer;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:6px;
+
+    font-size:11px;
+    font-weight:500;
+
+    transition:.2s;
+}
+
+.controls button i{
+    width:40px;
+    height:40px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#35373b;
+
+    font-size:16px;
+
+    transition:.2s;
+}
+
+.controls button:hover{
+    background:#2a2c30;
+}
+
+.controls button:hover i{
+    background:#2563EB;
+    transform:translateY(-2px);
+}
+
+
+/* ===========================
+   LEAVE BUTTON
+=========================== */
+
+#leaveBtn{
+    color:#ffb4ae;
+}
+
+#leaveBtn i{
+    background:#dc2626;
+    color:white;
+}
+
+#leaveBtn:hover{
+    background:rgba(220,38,38,.12);
+}
+
+#leaveBtn:hover i{
+    background:#b91c1c;
+}
+
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+#messages::-webkit-scrollbar{
+    width:6px;
+}
+
+#messages::-webkit-scrollbar-thumb{
+    background:#4a4d52;
+    border-radius:10px;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1000px){
+
+    .chat-section{
+        min-width:250px;
+        max-width:280px;
+    }
+
+    .video-section{
+        gap:12px;
+        padding:15px;
+    }
+
+}
+
+@media(max-width:800px){
+
+    body{
+        overflow:auto;
+    }
+
+    .meeting-navbar{
+        padding:0 16px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .meeting-container{
+        height:auto;
+        flex-direction:column;
+    }
+
+    .video-section{
+        grid-template-columns:1fr;
+    }
+
+    .video-box{
+        min-height:300px;
+    }
+
+    .chat-section{
+        max-width:none;
+        min-width:0;
+
+        width:auto;
+        height:320px;
+
+        margin:0 15px 15px;
+    }
+
+    .controls{
+        position:sticky;
+        bottom:0;
+
+        height:auto;
+
+        flex-wrap:wrap;
+    }
+
+}
+
+/* ===========================
+   WHITEBOARD
+=========================== */
+
+.whiteboard-modal{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.75);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+.whiteboard-container{
+
+    width:85%;
+    height:85%;
+
+    background:#ffffff;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.whiteboard-header{
+
+    height:60px;
+
+    background:#2563EB;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 20px;
+}
+
+.whiteboard-header button{
+
+    background:red;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+#whiteboard{
+
+    flex:1;
+
+    background:white;
+
+    cursor:crosshair;
+}
+
+.board-tools{
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#f3f4f6;
+}
+
+.board-tools button{
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.board-tools button:hover{
+
+    background:#1d4ed8;
+}
+
+#whiteboard{
+    cursor: crosshair;
+}
+
+/* ===========================
+   FILE SHARING
+=========================== */
+
+.shared-files{
+
+    padding:15px;
+
+    border-top:1px solid #444;
+
+    background:#252629;
+}
+
+.shared-files h3{
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+    color:#4F8DFD;
+}
+
+#fileList{
+
+    max-height:120px;
+
+    overflow-y:auto;
+
+    font-size:14px;
+}
+
+.file-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#333;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    margin-bottom:8px;
+}
+
+.file-item a{
+
+    color:#4F8DFD;
+
+    text-decoration:none;
+}
+
+.meeting-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+#meetingTimer{
+
+    background:#303134;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    font-size:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:white;
+}
+
+.meeting-notification{
+
+    text-align:center;
+
+    color:#4F8DFD;
+
+    font-size:14px;
+
+    margin:10px 0;
+
+    font-style:italic;
+}
+
+.meeting-notification{
+
+    text-align:center;
+
+    color:#4F8DFD;
+
+    font-style:italic;
+
+    margin:10px 0;
+
+    font-size:14px;
+
+}
+
+#roomBox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+#copyRoomBtn{
+
+    border:none;
+
+    background:#2563EB;
+
+    color:white;
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#copyRoomBtn:hover{
+
+    background:#1d4ed8;
+
+}
+
+#shareStatus{
+
+    background:#303134;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+.avatar-box{
+    display:none;
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    background:#2b2b2b;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:1;
+}
+
+#avatarInitials{
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#2563EB;
+
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:48px;
+    font-weight:700;
+}
+
+#remoteAvatarBox{
+
+    display:none;
+
+    width:100%;
+    height:100%;
+
+    justify-content:center;
+    align-items:center;
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    background:#2b2b2b;
+
+}
+
+#remoteAvatarInitials{
+
+    width:110px;
+    height:110px;
+
+    border-radius:50%;
+
+    background:#2563EB;
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:42px;
+    font-weight:bold;
+
+}
+
+/* ============================= */
+/* SCREEN SHARING VIDEO FIX */
+/* ============================= */
+
+.video-box {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+}
+
+#localVideo,
+#remoteVideo {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #111;
+}
+
+.video-box video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ============================= */
+/* WHITEBOARD TOOLBAR IMPROVEMENT */
+/* ============================= */
+
+.board-tools {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 14px 20px;
+    background: #f1f3f6;
+    border-top: 1px solid #d9dde3;
+}
+
+/* Labels */
+.board-tools label {
+    color: #222 !important;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Color picker */
+#colorPicker {
+    width: 64px;
+    height: 36px;
+    padding: 2px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+}
+
+/* Size dropdown */
+#sizePicker {
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    background: white;
+    color: #222;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Pen / Eraser / Clear buttons */
+.board-tools button {
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.board-tools button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Active eraser */
+#eraserBtn.active {
+    background: #dc2626;
+}
+
+/* Clear button */
+#clearBoard {
+    background: #2563eb;
+}
+
+#clearBoard:hover {
+    background: #1d4ed8;
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meeting | ConnectX</title>
+
+    <link rel="stylesheet" href="css/meeting.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="meeting-navbar">
+
+        <div id="roomBox">
+
+            <span id="roomDisplay"></span>
+
+            <button id="copyRoomBtn">
+                <i class="fa-regular fa-copy"></i>
+            </button>
+
+        </div>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-video"></i>
+
+            ConnectX
+
+        </div>
+
+        <div class="meeting-info">
+
+            <span id="meetingTimer">
+
+                <i class="fa-regular fa-clock"></i>
+
+                00:00
+
+            </span>
+
+            <span id="userCountDisplay">
+
+                <i class="fa-solid fa-users"></i>
+
+                1
+
+            </span>
+
+            <span id="shareStatus">
+
+                🖥️ Not Sharing
+
+            </span>
+
+        </div>
+
+    </nav>
+
+    <!-- Meeting Area -->
+
+    <div class="meeting-container">
+
+        <!-- Video Section -->
+
+        <div class="video-section">
+
+            <!-- Local Video -->
+
+            <div class="video-box">
+
+                <div class="video-title">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    You
+
+                </div>
+
+                <div id="avatarBox" class="avatar-box">
+
+                    <div id="avatarInitials"></div>
+
+                </div>
+
+                <video id="localVideo" autoplay muted playsinline></video>
+
+            </div>
+
+            <!-- Remote Video -->
+
+            <div class="video-box">
+
+                <div class="video-title">
+                    <i class="fa-solid fa-user-group"></i>
+                    Participant
+                </div>
+
+                <div id="remoteAvatarBox" class="avatar-box">
+
+                    <div id="remoteAvatarInitials"></div>
+
+                </div>
+
+                <video
+                    id="remoteVideo"
+                    autoplay
+                    playsinline>
+                </video>
+
+            </div>
+
+        </div>
+
+        <!-- Chat Section -->
+
+        <div class="chat-section">
+
+            <h2>
+
+                <i class="fa-solid fa-comments"></i>
+
+                Meeting Chat
+
+            </h2>
+
+            <div id="messages">
+                <div id="emptyMessage">No messages yet...</div>
+            </div>
+
+            <div class="chat-input">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Type message...">
+
+                <button id="sendBtn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Whiteboard -->
+
+    <div id="whiteboardModal" class="whiteboard-modal">
+
+        <div class="whiteboard-container">
+
+            <div class="whiteboard-header">
+
+                <h2>
+                    <i class="fa-solid fa-chalkboard"></i>
+                    Whiteboard
+                </h2>
+
+                <button id="closeBoard">✖</button>
+
+            </div>
+
+            <canvas id="whiteboard"></canvas>
+
+            <div class="board-tools">
+
+                <!-- Pen Color -->
+                <label>
+                    Color
+                    <input
+                        type="color"
+                        id="penColor"
+                        value="#2563EB">
+                </label>
+
+                <!-- Pen Size -->
+                <label>
+                    Size
+                    <select id="penSize">
+
+                        <option value="2">Small</option>
+                        <option value="4" selected>Medium</option>
+                        <option value="8">Large</option>
+                        <option value="12">Extra Large</option>
+
+                    </select>
+                </label>
+
+                <!-- Eraser -->
+                <button id="eraserBtn">
+                    🧽 Eraser
+                </button>
+
+                <!-- Clear -->
+                <button id="clearBoard">
+                    🗑️ Clear
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Controls -->
+
+    <div class="controls">
+
+        <button id="micBtn" class="control-btn">
+
+            <i class="fa-solid fa-microphone"></i>
+
+            <span>Mic</span>
+
+        </button>
+
+        <button id="cameraBtn">
+
+            <i class="fa-solid fa-video"></i>
+
+            Camera
+
+        </button>
+
+        <button id="screenBtn">
+
+            <i class="fa-solid fa-display"></i>
+
+            Share Screen
+
+        </button> 
+
+        <button id="whiteboardBtn">
+
+            <i class="fa-solid fa-pen"></i>
+
+            Whiteboard
+
+        </button>
+
+        <button id="leaveBtn">
+
+            <i class="fa-solid fa-phone-slash"></i>
+
+            Leave
+
+        </button>
+
+    </div>
+
+    <script src="http://localhost:5000/socket.io/socket.io.js"></script>
+
+    <script src="js/meeting.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ConnectX</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-video"></i>
+        ConnectX
+    </div>
+
+    <div class="nav-right">
+
+        <span id="welcomeUser"></span>
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- Main -->
+
+<div class="dashboard">
+
+    <h1>Welcome Back 👋</h1>
+
+    <div class="cards">
+
+        <!-- Create Meeting -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-video"></i>
+
+            <h2>Create Meeting</h2>
+
+            <p>Create a new meeting instantly.</p>
+
+            <button id="createMeeting">
+                Create
+            </button>
+
+        </div>
+
+        <!-- Join Meeting -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h2>Join Meeting</h2>
+
+            <input
+            type="text"
+            id="roomId"
+            placeholder="Enter Room ID">
+
+            <button id="joinMeeting">
+                Join
+            </button>
+
+        </div>
+
+        <!-- Online Users -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-user-group"></i>
+
+            <h2>Online Users</h2>
+
+            <p id="onlineUsers">Connecting...</p>
+
+        </div>
+
+        <!-- Recent Meetings -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <h2>Recent Meetings</h2>
+
+            <div id="recentMeetings">
+                <p>No meetings yet</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="http://localhost:5000/socket.io/socket.io.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
